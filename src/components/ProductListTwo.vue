@@ -12,13 +12,14 @@
 
 <script>
 export default {
-    props:['products'],
-    data(){
-        return {
+computed:{
 
-        }
+    products(){
+        return this.$store.state.products;
+
     }
 
+ }
 }
 </script>
 
