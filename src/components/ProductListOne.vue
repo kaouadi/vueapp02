@@ -23,18 +23,18 @@ computed:{
         return this.$store.state.products;
 
     },
-     ...mapGetters([
-     'saleProducts'
-     ]),
+     ...mapGetters('one',{
+     saleProducts: 'saleProducts'
+     }),
 
 
  },
 
  methods:{
 
-    ...mapActions([
-     'reducePrice'
-    ]),
+    ...mapActions('one',{
+     reducePrice: 'reducePrice'
+    }),
 
  }
 }
