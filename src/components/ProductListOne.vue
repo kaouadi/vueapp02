@@ -36,7 +36,10 @@ computed:{
      reducePrice: 'reducePrice'
     }),
 
- }
+ },
+ created () {
+    this.$store.dispatch('one/getAllProducts')
+  }
 }
 
 </script>

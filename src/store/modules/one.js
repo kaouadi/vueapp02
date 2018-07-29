@@ -1,12 +1,11 @@
+import product from '../../api/product'
+
+
+
 // state
 const state = {
 
-    products: [
-        {name: 'Banan Skin', price: 20},
-        {name: 'Banan JK', price: 40},
-        {name: 'Banan LM', price: 60},
-
-      ]
+    products: []
 
 }
 
@@ -29,12 +28,13 @@ const getters = {
 // mutations
 const mutations = {
 
-    reducePrice: function(state,payload){
+    reducePrice(state,payload){
         state.products.forEach(product => {
             product.price -= payload
         });
-
-
+    },
+    setProducts (state, products) {
+        state.products = products
     }
 
 }
@@ -48,6 +48,11 @@ const actions = {
             context.commit('reducePrice', payload)
         },2000);
 
+    },
+    getAllProducts ({ commit }) {
+        product.getProducts(function(products){
+          commit('setProducts', products)
+        })
     }
 
 
