@@ -16,7 +16,7 @@ const getters = {
         var saleProducts = state.products.map(function(product){
             return {
                 name: product.name,
-                price: product.price/2
+                price: product.price
             }
         })
         return saleProducts;
@@ -43,9 +43,9 @@ const mutations = {
 // actions
 const actions = {
 
-    reducePrice(context, payload){
+    reducePrice ({commit},payload){
         setTimeout(function(){
-            context.commit('reducePrice', payload)
+            commit('reducePrice', payload)
         },2000);
 
     },
